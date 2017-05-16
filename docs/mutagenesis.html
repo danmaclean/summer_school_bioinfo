@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Mutational Genomics</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="An introductory course for bioinformatics of mutational genomics">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Mutational Genomics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="An introductory course for bioinformatics of mutational genomics" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Mutational Genomics" />
+  
+  <meta name="twitter:description" content="An introductory course for bioinformatics of mutational genomics" />
+  
+
+<meta name="author" content="Dan MacLean">
+
+
+<meta name="date" content="2017-05-16">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="preprocessing-data.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Mutational Genomics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-fork-is-not-a-hairbrush---it-just-has-some-similar-properties"><i class="fa fa-check"></i>A fork is not a hairbrush - it just has some similar properties</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#so-finding-the-function-of-a-gene-isnt-straightforward"><i class="fa fa-check"></i>So finding the function of a gene isn’t straightforward</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#we-need-something-smarter---mutational-genomics-is-this-smarter-thing"><i class="fa fa-check"></i>We need something smarter - mutational genomics is this smarter thing</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#our-objective"><i class="fa fa-check"></i>Our objective</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="mutagenesis.html"><a href="mutagenesis.html"><i class="fa fa-check"></i><b>1</b> Mutagenesis</a><ul>
+<li class="chapter" data-level="1.1" data-path="mutagenesis.html"><a href="mutagenesis.html#learning-objectives"><i class="fa fa-check"></i><b>1.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="mutagenesis.html"><a href="mutagenesis.html#mutagenesis-with-ems"><i class="fa fa-check"></i><b>1.2</b> Mutagenesis with EMS</a></li>
+<li class="chapter" data-level="1.3" data-path="mutagenesis.html"><a href="mutagenesis.html#getting-a-population-homozygous-for-ems-induced-mutations"><i class="fa fa-check"></i><b>1.3</b> Getting a population homozygous for EMS induced mutations</a></li>
+<li class="chapter" data-level="1.4" data-path="mutagenesis.html"><a href="mutagenesis.html#genetic-screens"><i class="fa fa-check"></i><b>1.4</b> Genetic screens</a></li>
+<li class="chapter" data-level="1.5" data-path="mutagenesis.html"><a href="mutagenesis.html#recombination-during-crossing-causes-changes-in-snp-density-away-from-the-site-of-mutation"><i class="fa fa-check"></i><b>1.5</b> Recombination during crossing causes changes in SNP density away from the site of mutation</a></li>
+<li class="chapter" data-level="1.6" data-path="mutagenesis.html"><a href="mutagenesis.html#section-quiz"><i class="fa fa-check"></i><b>1.6</b> Section Quiz</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="preprocessing-data.html"><a href="preprocessing-data.html"><i class="fa fa-check"></i><b>2</b> PreProcessing Data</a><ul>
+<li class="chapter" data-level="2.1" data-path="preprocessing-data.html"><a href="preprocessing-data.html#learning-objectives-1"><i class="fa fa-check"></i><b>2.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="2.2" data-path="preprocessing-data.html"><a href="preprocessing-data.html#fastq"><i class="fa fa-check"></i><b>2.2</b> Fastq</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="preprocessing-data.html"><a href="preprocessing-data.html#quality-score-encoding"><i class="fa fa-check"></i><b>2.2.1</b> Quality score encoding</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="preprocessing-data.html"><a href="preprocessing-data.html#fastqc"><i class="fa fa-check"></i><b>2.3</b> FastQC</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="preprocessing-data.html"><a href="preprocessing-data.html#sometimes-we-shouldnt-trim"><i class="fa fa-check"></i><b>2.3.1</b> Sometimes we shouldn’t trim</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="preprocessing-data.html"><a href="preprocessing-data.html#exercises"><i class="fa fa-check"></i><b>2.4</b> Exercises</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="preprocessing-data.html"><a href="preprocessing-data.html#power-up-the-vm"><i class="fa fa-check"></i><b>2.4.1</b> Power Up The VM</a></li>
+<li class="chapter" data-level="2.4.2" data-path="preprocessing-data.html"><a href="preprocessing-data.html#start-galaxy"><i class="fa fa-check"></i><b>2.4.2</b> Start Galaxy</a></li>
+<li class="chapter" data-level="2.4.3" data-path="preprocessing-data.html"><a href="preprocessing-data.html#run-fastqc"><i class="fa fa-check"></i><b>2.4.3</b> Run FastQC</a></li>
+<li class="chapter" data-level="2.4.4" data-path="preprocessing-data.html"><a href="preprocessing-data.html#interpret-sequence-quality"><i class="fa fa-check"></i><b>2.4.4</b> Interpret Sequence Quality</a></li>
+<li class="chapter" data-level="2.4.5" data-path="preprocessing-data.html"><a href="preprocessing-data.html#clean-up-poor-quality-sequence"><i class="fa fa-check"></i><b>2.4.5</b> Clean Up Poor Quality Sequence</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html"><i class="fa fa-check"></i><b>3</b> Aligning Reads To A Reference</a><ul>
+<li class="chapter" data-level="3.1" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#learning-objectives-2"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#mapping-and-alignment"><i class="fa fa-check"></i><b>3.2</b> Mapping and Alignment</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#bwa"><i class="fa fa-check"></i><b>3.2.1</b> BWA</a></li>
+<li class="chapter" data-level="3.2.2" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#sam-format"><i class="fa fa-check"></i><b>3.2.2</b> SAM Format</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#exercises-1"><i class="fa fa-check"></i><b>3.3</b> Exercises</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#align-paired-end-reads-to-a-reference-genome"><i class="fa fa-check"></i><b>3.3.1</b> Align Paired-End Reads To A Reference Genome</a></li>
+<li class="chapter" data-level="3.3.2" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#merge-alignments-into-one-bam"><i class="fa fa-check"></i><b>3.3.2</b> Merge Alignments Into One BAM</a></li>
+<li class="chapter" data-level="3.3.3" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#alignment-quality"><i class="fa fa-check"></i><b>3.3.3</b> Alignment Quality</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html"><i class="fa fa-check"></i><b>4</b> Finding SNPs With An Alignment</a><ul>
+<li class="chapter" data-level="4.1" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#learning-objectives-3"><i class="fa fa-check"></i><b>4.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.2" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#mpileup"><i class="fa fa-check"></i><b>4.2</b> MPileup</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#different-flavours-of-pileup"><i class="fa fa-check"></i><b>4.2.1</b> Different Flavours of PileUp</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#exercises-2"><i class="fa fa-check"></i><b>4.3</b> Exercises</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#mpileup-1"><i class="fa fa-check"></i><b>4.3.1</b> MPileup</a></li>
+<li class="chapter" data-level="4.3.2" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#varscan"><i class="fa fa-check"></i><b>4.3.2</b> VarScan</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html"><i class="fa fa-check"></i><b>5</b> Visualising SNPs To Find Candidates</a><ul>
+<li class="chapter" data-level="5.1" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#learning-objectives-4"><i class="fa fa-check"></i><b>5.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="5.2" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#annotation"><i class="fa fa-check"></i><b>5.2</b> Annotation</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#snpeff"><i class="fa fa-check"></i><b>5.2.1</b> SNPEff</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#candisnp"><i class="fa fa-check"></i><b>5.3</b> CandiSNP</a></li>
+<li class="chapter" data-level="5.4" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#density-plots"><i class="fa fa-check"></i><b>5.4</b> Density plots</a></li>
+<li class="chapter" data-level="5.5" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#centromeres"><i class="fa fa-check"></i><b>5.5</b> Centromeres</a></li>
+<li class="chapter" data-level="5.6" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#snp-deletion---fewer-are-better"><i class="fa fa-check"></i><b>5.6</b> SNP Deletion - Fewer are better</a></li>
+<li class="chapter" data-level="5.7" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#exercises-3"><i class="fa fa-check"></i><b>5.7</b> Exercises</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#analyse-snp-data-with-candisnp"><i class="fa fa-check"></i><b>5.7.1</b> Analyse SNP data with CandiSNP</a></li>
+<li class="chapter" data-level="5.7.2" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#generate-density-plots-of-different-snp-classes"><i class="fa fa-check"></i><b>5.7.2</b> Generate density plots of different SNP classes</a></li>
+<li class="chapter" data-level="5.7.3" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#comparing-density-plots"><i class="fa fa-check"></i><b>5.7.3</b> Comparing density plots</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mutational Genomics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="mutagenesis" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Mutagenesis</h1>
+<div id="learning-objectives" class="section level2">
+<h2><span class="header-section-number">1.1</span> Learning Objectives</h2>
+<ul>
+<li>Mutagens make changes in a genome</li>
+<li>EMS creates Single Nucleotide Polymorphisms of C-&gt;T or G-&gt;A Transition (mostly)</li>
+<li>Careful crossing gives us homozygous mutant lines</li>
+<li>Genetic screens select lines with changes related to our interest</li>
+</ul>
+</div>
+<div id="mutagenesis-with-ems" class="section level2">
+<h2><span class="header-section-number">1.2</span> Mutagenesis with EMS</h2>
+<p>The first step is to mutagenise a population of organisms, or cells or similar. Mutagenesis is basically causing damage to DNA. Lot’s of things can do this, Wikipedia has a great page on <a href="https://en.wikipedia.org/wiki/Mutagen">mutagens</a>. In plant genetics, the mutagen we typically use for changing single nucleotides in DNA, things we call point mutations or Single Nucleotide Polymorphisms (SNPs), is EMS - <a href="https://en.wikipedia.org/wiki/Ethyl_methanesulfonate">Ethyl methanesulfonate</a>. EMS will predominantly make C’s change to T’s and G’s change to A’s. These mutations are distributed fairly uniformly throughout the genome.</p>
+<p>In practice we take a load of plant seeds and soak them in a solution of EMS. The EMS soaks in and damages the plant’s DNA.</p>
+<p>This damages the DNA in <strong>some</strong> but <strong>not all</strong> of the cells in the seed.</p>
+</div>
+<div id="getting-a-population-homozygous-for-ems-induced-mutations" class="section level2">
+<h2><span class="header-section-number">1.3</span> Getting a population homozygous for EMS induced mutations</h2>
+<p>We grow up the seed (let’s call the plants that grow up the M1 generation) and the cells in those M1 plants that descended from the mutagenised cells carry the mutations. Sometimes these will be cells in the germline - ones that beget seeds. The progeny of the M1 plants, that grow from mutation carrying seeds (let’s call these progeny the M2) will all grow up with the mutation <strong>in every cell</strong> and eventually, by identifying the progeny plants carefully, we can get a population of plants which are homozygous for all the EMS SNP mutations we induced.</p>
+
+<div class="figure"><span id="fig:mutagenesis"></span>
+<img src="assets/nrg730-i2.png" alt="A plant mutagenesis scheme from Page and Grossniklaus (2002)." width="192" />
+<p class="caption">
+Figure 1.1: A plant mutagenesis scheme from <span class="citation">Page and Grossniklaus (<a href="#ref-Page:2002vm">2002</a>)</span>.
+</p>
+</div>
+<p>This same principle is true for any organism. Whatever you want to do mutational genomics with, you will need to:</p>
+<ol style="list-style-type: decimal">
+<li>mutate</li>
+<li>select</li>
+<li>cross</li>
+<li>screen</li>
+</ol>
+</div>
+<div id="genetic-screens" class="section level2">
+<h2><span class="header-section-number">1.4</span> Genetic screens</h2>
+<p>Once we have a mutagenised population we can start to select the individuals in that population that show some change in the phenotype of interest, say flowering time. We can use further crosses to bring in extra variation or use the natural variation - both of which are heterozygous - while keeping the homozygous mutation(s) that is (are) causing the phenotype by constantly selecting for offspring that show the phenotype of interest everytime we carry out crosses.</p>
+
+<div class="figure"><span id="fig:tallplant"></span>
+<img src="assets/tall_plant.jpg" alt="One of these plants is affected in the pathways that control flowering time - the right hand plant flowers early. Source: Detlef Weigel" width="197" />
+<p class="caption">
+Figure 1.2: One of these plants is affected in the pathways that control flowering time - the right hand plant flowers early. Source: Detlef Weigel
+</p>
+</div>
+</div>
+<div id="recombination-during-crossing-causes-changes-in-snp-density-away-from-the-site-of-mutation" class="section level2">
+<h2><span class="header-section-number">1.5</span> Recombination during crossing causes changes in SNP density away from the site of mutation</h2>
+<p>All these crosses cause recombination in the chromosomes that bring in homologous parts from the line being used to cross. This happens at a greater frequency away from the mutation that we are selecting for such that regions further from the selected mutation carry fewer and fewer of the homozygous mutations.</p>
+
+<div class="figure"><span id="fig:ngm"></span>
+<img src="assets/ngm.png" alt="Consider crossing two chromosomes. Recombination causes the parts furthest from the selected mutation to lose the homozygous mutations as a function of distance from the selected mutation. Source: Ryan Austin" width="220" />
+<p class="caption">
+Figure 1.3: Consider crossing two chromosomes. Recombination causes the parts furthest from the selected mutation to lose the homozygous mutations as a function of distance from the selected mutation. Source: <a href="http://bar.utoronto.ca/ngm/description.html">Ryan Austin</a>
+</p>
+</div>
+<p>This statistical difference, a region of high homozygous SNPs around the mutation is what we will use to identify the SNPs that cause our phenotype of interest.</p>
+</div>
+<div id="section-quiz" class="section level2">
+<h2><span class="header-section-number">1.6</span> Section Quiz</h2>
+<p>Please now complete the section quiz at <a href="https://goo.gl/forms/RLGLndlcEcoV8c742">this link</a></p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Page:2002vm">
+<p>Page, Damian R, and Ueli Grossniklaus. 2002. “The art and design of genetic screens: Arabidopsis thaliana.” <em>Nature Reviews Genetics</em> 3 (2): 124–36.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="preprocessing-data.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-mutagenesis.Rmd",
+"text": "Edit"
+},
+"download": ["bioinformatics_handbook.pdf", "bioinformatics_handbook.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

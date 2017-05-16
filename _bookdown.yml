@@ -1,0 +1,5 @@
+book_filename: "bioinformatics_handbook"
+chapter_name: "Chapter "
+output_dir: docs
+clean: [packages.bib, bookdown.bbl]
+new_session: yes

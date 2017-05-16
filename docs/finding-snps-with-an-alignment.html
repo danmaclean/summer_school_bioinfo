@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Mutational Genomics</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="An introductory course for bioinformatics of mutational genomics">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Mutational Genomics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="An introductory course for bioinformatics of mutational genomics" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Mutational Genomics" />
+  
+  <meta name="twitter:description" content="An introductory course for bioinformatics of mutational genomics" />
+  
+
+<meta name="author" content="Dan MacLean">
+
+
+<meta name="date" content="2017-05-16">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="aligning-reads-to-a-reference.html">
+<link rel="next" href="visualising-snps-to-find-candidates.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Mutational Genomics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-fork-is-not-a-hairbrush---it-just-has-some-similar-properties"><i class="fa fa-check"></i>A fork is not a hairbrush - it just has some similar properties</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#so-finding-the-function-of-a-gene-isnt-straightforward"><i class="fa fa-check"></i>So finding the function of a gene isn’t straightforward</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#we-need-something-smarter---mutational-genomics-is-this-smarter-thing"><i class="fa fa-check"></i>We need something smarter - mutational genomics is this smarter thing</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#our-objective"><i class="fa fa-check"></i>Our objective</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="mutagenesis.html"><a href="mutagenesis.html"><i class="fa fa-check"></i><b>1</b> Mutagenesis</a><ul>
+<li class="chapter" data-level="1.1" data-path="mutagenesis.html"><a href="mutagenesis.html#learning-objectives"><i class="fa fa-check"></i><b>1.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="mutagenesis.html"><a href="mutagenesis.html#mutagenesis-with-ems"><i class="fa fa-check"></i><b>1.2</b> Mutagenesis with EMS</a></li>
+<li class="chapter" data-level="1.3" data-path="mutagenesis.html"><a href="mutagenesis.html#getting-a-population-homozygous-for-ems-induced-mutations"><i class="fa fa-check"></i><b>1.3</b> Getting a population homozygous for EMS induced mutations</a></li>
+<li class="chapter" data-level="1.4" data-path="mutagenesis.html"><a href="mutagenesis.html#genetic-screens"><i class="fa fa-check"></i><b>1.4</b> Genetic screens</a></li>
+<li class="chapter" data-level="1.5" data-path="mutagenesis.html"><a href="mutagenesis.html#recombination-during-crossing-causes-changes-in-snp-density-away-from-the-site-of-mutation"><i class="fa fa-check"></i><b>1.5</b> Recombination during crossing causes changes in SNP density away from the site of mutation</a></li>
+<li class="chapter" data-level="1.6" data-path="mutagenesis.html"><a href="mutagenesis.html#section-quiz"><i class="fa fa-check"></i><b>1.6</b> Section Quiz</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="preprocessing-data.html"><a href="preprocessing-data.html"><i class="fa fa-check"></i><b>2</b> PreProcessing Data</a><ul>
+<li class="chapter" data-level="2.1" data-path="preprocessing-data.html"><a href="preprocessing-data.html#learning-objectives-1"><i class="fa fa-check"></i><b>2.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="2.2" data-path="preprocessing-data.html"><a href="preprocessing-data.html#fastq"><i class="fa fa-check"></i><b>2.2</b> Fastq</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="preprocessing-data.html"><a href="preprocessing-data.html#quality-score-encoding"><i class="fa fa-check"></i><b>2.2.1</b> Quality score encoding</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="preprocessing-data.html"><a href="preprocessing-data.html#fastqc"><i class="fa fa-check"></i><b>2.3</b> FastQC</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="preprocessing-data.html"><a href="preprocessing-data.html#sometimes-we-shouldnt-trim"><i class="fa fa-check"></i><b>2.3.1</b> Sometimes we shouldn’t trim</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="preprocessing-data.html"><a href="preprocessing-data.html#exercises"><i class="fa fa-check"></i><b>2.4</b> Exercises</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="preprocessing-data.html"><a href="preprocessing-data.html#power-up-the-vm"><i class="fa fa-check"></i><b>2.4.1</b> Power Up The VM</a></li>
+<li class="chapter" data-level="2.4.2" data-path="preprocessing-data.html"><a href="preprocessing-data.html#start-galaxy"><i class="fa fa-check"></i><b>2.4.2</b> Start Galaxy</a></li>
+<li class="chapter" data-level="2.4.3" data-path="preprocessing-data.html"><a href="preprocessing-data.html#run-fastqc"><i class="fa fa-check"></i><b>2.4.3</b> Run FastQC</a></li>
+<li class="chapter" data-level="2.4.4" data-path="preprocessing-data.html"><a href="preprocessing-data.html#interpret-sequence-quality"><i class="fa fa-check"></i><b>2.4.4</b> Interpret Sequence Quality</a></li>
+<li class="chapter" data-level="2.4.5" data-path="preprocessing-data.html"><a href="preprocessing-data.html#clean-up-poor-quality-sequence"><i class="fa fa-check"></i><b>2.4.5</b> Clean Up Poor Quality Sequence</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html"><i class="fa fa-check"></i><b>3</b> Aligning Reads To A Reference</a><ul>
+<li class="chapter" data-level="3.1" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#learning-objectives-2"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#mapping-and-alignment"><i class="fa fa-check"></i><b>3.2</b> Mapping and Alignment</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#bwa"><i class="fa fa-check"></i><b>3.2.1</b> BWA</a></li>
+<li class="chapter" data-level="3.2.2" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#sam-format"><i class="fa fa-check"></i><b>3.2.2</b> SAM Format</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#exercises-1"><i class="fa fa-check"></i><b>3.3</b> Exercises</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#align-paired-end-reads-to-a-reference-genome"><i class="fa fa-check"></i><b>3.3.1</b> Align Paired-End Reads To A Reference Genome</a></li>
+<li class="chapter" data-level="3.3.2" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#merge-alignments-into-one-bam"><i class="fa fa-check"></i><b>3.3.2</b> Merge Alignments Into One BAM</a></li>
+<li class="chapter" data-level="3.3.3" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#alignment-quality"><i class="fa fa-check"></i><b>3.3.3</b> Alignment Quality</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html"><i class="fa fa-check"></i><b>4</b> Finding SNPs With An Alignment</a><ul>
+<li class="chapter" data-level="4.1" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#learning-objectives-3"><i class="fa fa-check"></i><b>4.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.2" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#mpileup"><i class="fa fa-check"></i><b>4.2</b> MPileup</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#different-flavours-of-pileup"><i class="fa fa-check"></i><b>4.2.1</b> Different Flavours of PileUp</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#exercises-2"><i class="fa fa-check"></i><b>4.3</b> Exercises</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#mpileup-1"><i class="fa fa-check"></i><b>4.3.1</b> MPileup</a></li>
+<li class="chapter" data-level="4.3.2" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#varscan"><i class="fa fa-check"></i><b>4.3.2</b> VarScan</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html"><i class="fa fa-check"></i><b>5</b> Visualising SNPs To Find Candidates</a><ul>
+<li class="chapter" data-level="5.1" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#learning-objectives-4"><i class="fa fa-check"></i><b>5.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="5.2" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#annotation"><i class="fa fa-check"></i><b>5.2</b> Annotation</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#snpeff"><i class="fa fa-check"></i><b>5.2.1</b> SNPEff</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#candisnp"><i class="fa fa-check"></i><b>5.3</b> CandiSNP</a></li>
+<li class="chapter" data-level="5.4" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#density-plots"><i class="fa fa-check"></i><b>5.4</b> Density plots</a></li>
+<li class="chapter" data-level="5.5" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#centromeres"><i class="fa fa-check"></i><b>5.5</b> Centromeres</a></li>
+<li class="chapter" data-level="5.6" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#snp-deletion---fewer-are-better"><i class="fa fa-check"></i><b>5.6</b> SNP Deletion - Fewer are better</a></li>
+<li class="chapter" data-level="5.7" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#exercises-3"><i class="fa fa-check"></i><b>5.7</b> Exercises</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#analyse-snp-data-with-candisnp"><i class="fa fa-check"></i><b>5.7.1</b> Analyse SNP data with CandiSNP</a></li>
+<li class="chapter" data-level="5.7.2" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#generate-density-plots-of-different-snp-classes"><i class="fa fa-check"></i><b>5.7.2</b> Generate density plots of different SNP classes</a></li>
+<li class="chapter" data-level="5.7.3" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#comparing-density-plots"><i class="fa fa-check"></i><b>5.7.3</b> Comparing density plots</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mutational Genomics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="finding-snps-with-an-alignment" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Finding SNPs With An Alignment</h1>
+<div id="learning-objectives-3" class="section level2">
+<h2><span class="header-section-number">4.1</span> Learning Objectives</h2>
+<ul>
+<li>Understanding Pileups and VCFs</li>
+<li>Calling reliable SNPs</li>
+<li>Annotating SNPs with SNPEff</li>
+</ul>
+<p>Many different programs can be used to call SNPs, including SAMTools <span class="citation">(Li et al. <a href="#ref-Li:2009ka">2009</a>)</span>, Picard, GATK <span class="citation">(De Summa et al. <a href="#ref-DeSumma:2017kr">2017</a>)</span> and VarScan <span class="citation">(Koboldt et al. <a href="#ref-Koboldt:2009dk">2009</a>)</span>. Some of these programs use the BAM alignment file directly, some use an MPileup file. MPileups and VCF files are both used to represent SNPs and associated scores.</p>
+</div>
+<div id="mpileup" class="section level2">
+<h2><span class="header-section-number">4.2</span> MPileup</h2>
+<p>The MPileup format is a per-line base-by-base representation of the alignment. It provides a much more coherent way of viewing the alignment than the SAM file.</p>
+<p>Here’s a sample:</p>
+<pre><code>
+seq1 272 T 24  ,.$.....,,.,.,...,,,.,..^+. &lt;&lt;&lt;+;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;=&lt;;&lt;;7&lt;&amp;
+seq1 273 T 23  ,.....,,.,.,...,,,.,..A &lt;&lt;&lt;;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;3&lt;=&lt;&lt;&lt;;&lt;&lt;+
+seq1 274 T 23  ,.$....,,.,.,...,,,.,...    7&lt;7;&lt;;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;=&lt;;&lt;;&lt;&lt;6
+seq1 275 A 23  ,$....,,.,.,...,,,.,...^l.  &lt;+;9*&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;=&lt;&lt;:;&lt;&lt;&lt;&lt;
+seq1 276 G 22  ...T,,.,.,...,,,.,....  33;+&lt;&lt;7=7&lt;&lt;7&lt;&amp;&lt;&lt;1;&lt;&lt;6&lt;
+seq1 277 T 22  ....,,.,.,.C.,,,.,..G.  +7&lt;;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&amp;&lt;=&lt;&lt;:;&lt;&lt;&amp;&lt;
+seq1 278 G 23  ....,,.,.,...,,,.,....^k.   %38*&lt;&lt;;&lt;7&lt;&lt;7&lt;=&lt;&lt;&lt;;&lt;&lt;&lt;&lt;&lt;
+seq1 279 C 23  A..T,,.,.,...,,,.,..... ;75&amp;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;=&lt;&lt;&lt;9&lt;&lt;:&lt;&lt;
+</code></pre>
+<p>Each line represents a single nucleotide in the reference. The first three columns represent the reference name, position on the reference and the reference nucleotide.</p>
+<p>The next three columns are about the bases piled-up over that position, so are total read depth, read bases, and base qualities.</p>
+<p>At the read base column,</p>
+<ul>
+<li>a dot <code>.</code> = a match to the reference base on the forward</li>
+<li>a comma <code>,</code> = match on the reverse strand</li>
+<li>any of <code>ACGTN</code> = a mismatch on the forward strand</li>
+<li>any of <code>acgtn</code> = mismatch on the reverse strand</li>
+</ul>
+<div id="different-flavours-of-pileup" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Different Flavours of PileUp</h3>
+<p>Pileup format has been extended at various times, so the exact format you get can vary a little, the description above is the core of them all and the extensions usually provide some further quality information. Recent versions of SAMtools add quite a few columns to this description.</p>
+<p>You can see more here <a href="http://samtools.sourceforge.net/pileup.shtml" class="uri">http://samtools.sourceforge.net/pileup.shtml</a></p>
+<p><code>SAMtools</code> is usually used to generate an MPileup, the <code>mpileup</code> command can do this. More recent versions of <code>SAMtools mpileup</code> and most other SNP callers can also generate another type of SNP describing file, a VCF <a href="https://samtools.github.io/hts-specs/VCFv4.2.pdf">Variant Call Format</a> file.</p>
+<p>The related VCF file takes a slightly different approach and looks like this:</p>
+<pre><code>##FORMAT=&lt;ID=DP,Number=1,Type=Integer,Description=&quot;Read Depth&quot;&gt;
+##FORMAT=&lt;ID=HQ,Number=2,Type=Integer,Description=&quot;Haplotype Quality&quot;&gt;
+#CHROM POS ID REF ALT QUAL FILTER INFO FORMAT NA00001 NA00002 NA00003
+20 14370 rs6054257 G A 29 PASS NS=3;DP=14;AF=0.5;DB;H2 GT:GQ:DP:HQ 0|0:48:1:51,51 1|0:48:8:51,51 1/1:43:5:.,.
+20 17330 . T A 3 q10 NS=3;DP=11;AF=0.017 GT:GQ:DP:HQ 0|0:49:3:58,50 0|1:3:5:65,3 0/0:41:3
+20 1110696 rs6040355 A G,T 67 PASS NS=2;DP=10;AF=0.333,0.667;AA=T;DB GT:GQ:DP:HQ 1|2:21:6:23,27 2|1:2:0:18,2 2/2:35:4
+20 1230237 . T . 47 PASS NS=3;DP=13;AA=T GT:GQ:DP:HQ 0|0:54:7:56,60 0|0:48:4:51,51 0/0:61:2
+20 1234567 microsat1 GTC G,GTCT 50 PASS NS=3;DP=9;AA=G GT:GQ:DP 0/1:35:4 0/2:17:2 1/1:40:3</code></pre>
+<p>The first thing you notice is that it describes only variant positions <strong>NOT</strong> <strong>EVERY</strong> position like Pileup.</p>
+<p>The lines starting with <code>##</code> are the meta-data description lines. They define the labels for SNP data and contain key-value pairs separated by an ‘=’ sign (e.g. number=1, Type=Integer, Description=“Some description”).</p>
+<p>The header line starts with a single <code>#</code>, and has the column headings, these being <code>ALT</code> and <code>QUAL</code>.</p>
+<ol style="list-style-type: decimal">
+<li><code>CHROM</code> = chromosome</li>
+<li><code>POS</code> = position</li>
+<li><code>ID</code> = an ID (if given)</li>
+<li><code>REF</code> = reference sequence nucleotide</li>
+<li><code>ALT</code> = SNP nucleotide</li>
+<li><code>FILTER</code> = a filter defined in the metadata</li>
+<li><code>INFO</code> = Summary information about this SNP</li>
+<li><code>FORMAT</code> = Format of the sample column(s)</li>
+<li>Sample information for one sample formatted according to <code>FORMAT</code></li>
+<li>More sample info (if needed), also according to <code>FORMAT</code></li>
+</ol>
+<p><code>INFO</code> and <code>FORMAT</code> are where the VCF format really makes use of its meta-data. In the INFO column there will be a combination of key=value pairs, separated by semi-colons. An entry will read something like:</p>
+<pre><code>    ADP=27;WT=0;HET=2;HOM=0;NC=0</code></pre>
+<p>Each key (e.g. <code>ADP</code>) will have its meaning explained in the metadata <code>INFO</code> fields.</p>
+<p>The <code>FORMAT</code> column reads slightly different from the <code>INFO</code> field.</p>
+<pre><code>    GT:GQ:SDP:DP:RD:AD:FREQ:PVAL:RBQ:ABQ:RDF:RDR:ADF:ADR. </code></pre>
+<p>The meaning of these keys can be found in the meta-data in the <code>FORMAT</code> lines. Some common ones that are useful are:</p>
+<ul>
+<li><code>DP</code> = coverage depth</li>
+<li><code>GT</code> = genotype, e.g <code>0/0</code>, <code>1/1</code> and <code>0/1</code></li>
+</ul>
+<p>Genotype values have the following meanings:</p>
+<ul>
+<li><code>0/0</code> - Homozygous to the reference (<code>REF</code>)</li>
+<li><code>1/1</code> - Homozygous to the alternate non-reference allele (<code>ALT</code>)</li>
+<li><code>0/1</code> - Heterozygous (<code>0/2</code> represents a heterozygote with two alternate alleles)</li>
+</ul>
+<p>Deciding on the right parameters for SNP calling is very case specific. Often SNP calling pipelines will need to be optimised to ensure that the level of false positive calls is acceptable. Here are some parameters in SNP callers to look out for</p>
+<ul>
+<li>Minimum coverage - the number of read bases that contribute to the SNP call, more is better</li>
+<li>Minimum variant allele - the fraction of bases in the pileup that are needed for a SNP call (1/100 = bad, 50/100 = believable)</li>
+<li>P-value threshold - or some other probability based measure of SNP accuracy.</li>
+<li>Strand filter - discard SNPs where most reads come from one strand - helpful with certain sequencing errors</li>
+<li>Base quality - discard bases in the pileup that don’t have good enough individual Phred scores</li>
+</ul>
+<p>Whichever tool you use, make sure that you get a good idea of what it’s options for making high-quality SNPs are.</p>
+</div>
+</div>
+<div id="exercises-2" class="section level2">
+<h2><span class="header-section-number">4.3</span> Exercises</h2>
+<div id="mpileup-1" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> MPileup</h3>
+<p>You are provided with a new BAM file for <em>Arabidopsis</em> chromosome 4 in the shared data library <code>SNP Calling</code>, use it to run <code>HTS SAMtools .. SAMtools mpileup</code>. Remember you’ll need to load a reference genome, the <code>TAIR_10_chr4.fasta</code> file should be imported to your history for this purpose.</p>
+<ol style="list-style-type: decimal">
+<li>How do you make <code>SAMtools mpileup</code> output VCF or Mpileup?</li>
+<li>What are differences in information between the two?</li>
+<li>Generate an MPileup file and select appropriate <code>advanced options</code> to make sure you have a good enough mapping quality (~20) and base quality (~30) for reliable SNP calls.<br />
+</li>
+<li>What is the point of adding a maximum read depth?</li>
+<li>How does this run compare in execution time with earlier ones in this course? Why is there a difference?</li>
+</ol>
+<p>These are the largest datasets we use in this workshop The reference is a whole 20 Mb <em>Arabidopsis</em> chromosome, with full 30 deep covereage. The laptop VM takes a while to chug through it. If you are getting bored, you can restrict the amount of the reference that SAMtools will churn through. Try looking in <code>Advanced Options</code> for <code>Select regions to call</code>. You can paste or type in a region in the format <code>Chr4:1-100</code> - replacing the 1 and 100 with suitable start and stop coordinates. Try doing just 2000000.</p>
+</div>
+<div id="varscan" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> VarScan</h3>
+<p>From the mpileup file you created in the challenge above, use <code>VarScan Mpileup</code> in <code>Finding Variants</code> to filter the positions to find the SNPs and make the criteria a bit more stringent.</p>
+<ol style="list-style-type: decimal">
+<li>Inspect the pileup (or run some SAMtools stats) to determine suitable values for the depth and quality parameters.</li>
+<li>Our purpose is to clearly separate Homozygous and Heterozygous SNPs, which filters do you think we should use? What frequency values should we set to get many, good homozygous calls (hint: 100% frequency rules out some SNPs where a single miscalled read or base messes things up)</li>
+<li>How long does this take? What factors do you think affect the run time?</li>
+</ol>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Li:2009ka">
+<p>Li, Heng, Bob Handsaker, Alec Wysoker, Tim Fennell, Jue Ruan, Nils Homer, Gabor Marth, Goncalo Abecasis, Richard Durbin, and 1000 Genome Project Data Processing Subgroup. 2009. “The Sequence Alignment/Map format and SAMtools.” <em>Bioinformatics (Oxford, England)</em> 25 (16): 2078–9.</p>
+</div>
+<div id="ref-DeSumma:2017kr">
+<p>De Summa, Simona, Giovanni Malerba, Rosamaria Pinto, Antonio Mori, Vladan Mijatovic, and Stefania Tommasi. 2017. “GATK hard filtering: tunable parameters to improve variant calling for next generation sequencing targeted gene panel data.” <em>BMC Bioinformatics</em> 18 (Suppl 5): 119.</p>
+</div>
+<div id="ref-Koboldt:2009dk">
+<p>Koboldt, Daniel C, Ken Chen, Todd Wylie, David E Larson, Michael D McLellan, Elaine R Mardis, George M Weinstock, Richard K Wilson, and Li Ding. 2009. “VarScan: variant detection in massively parallel sequencing of individual and pooled samples.” <em>Bioinformatics (Oxford, England)</em> 25 (17): 2283–5.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="aligning-reads-to-a-reference.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="visualising-snps-to-find-candidates.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-snp-calling.Rmd",
+"text": "Edit"
+},
+"download": ["bioinformatics_handbook.pdf", "bioinformatics_handbook.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

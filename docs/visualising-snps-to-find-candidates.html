@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Mutational Genomics</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="An introductory course for bioinformatics of mutational genomics">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Mutational Genomics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="An introductory course for bioinformatics of mutational genomics" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Mutational Genomics" />
+  
+  <meta name="twitter:description" content="An introductory course for bioinformatics of mutational genomics" />
+  
+
+<meta name="author" content="Dan MacLean">
+
+
+<meta name="date" content="2017-05-16">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="finding-snps-with-an-alignment.html">
+<link rel="next" href="references.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Mutational Genomics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-fork-is-not-a-hairbrush---it-just-has-some-similar-properties"><i class="fa fa-check"></i>A fork is not a hairbrush - it just has some similar properties</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#so-finding-the-function-of-a-gene-isnt-straightforward"><i class="fa fa-check"></i>So finding the function of a gene isn’t straightforward</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#we-need-something-smarter---mutational-genomics-is-this-smarter-thing"><i class="fa fa-check"></i>We need something smarter - mutational genomics is this smarter thing</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#our-objective"><i class="fa fa-check"></i>Our objective</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="mutagenesis.html"><a href="mutagenesis.html"><i class="fa fa-check"></i><b>1</b> Mutagenesis</a><ul>
+<li class="chapter" data-level="1.1" data-path="mutagenesis.html"><a href="mutagenesis.html#learning-objectives"><i class="fa fa-check"></i><b>1.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="mutagenesis.html"><a href="mutagenesis.html#mutagenesis-with-ems"><i class="fa fa-check"></i><b>1.2</b> Mutagenesis with EMS</a></li>
+<li class="chapter" data-level="1.3" data-path="mutagenesis.html"><a href="mutagenesis.html#getting-a-population-homozygous-for-ems-induced-mutations"><i class="fa fa-check"></i><b>1.3</b> Getting a population homozygous for EMS induced mutations</a></li>
+<li class="chapter" data-level="1.4" data-path="mutagenesis.html"><a href="mutagenesis.html#genetic-screens"><i class="fa fa-check"></i><b>1.4</b> Genetic screens</a></li>
+<li class="chapter" data-level="1.5" data-path="mutagenesis.html"><a href="mutagenesis.html#recombination-during-crossing-causes-changes-in-snp-density-away-from-the-site-of-mutation"><i class="fa fa-check"></i><b>1.5</b> Recombination during crossing causes changes in SNP density away from the site of mutation</a></li>
+<li class="chapter" data-level="1.6" data-path="mutagenesis.html"><a href="mutagenesis.html#section-quiz"><i class="fa fa-check"></i><b>1.6</b> Section Quiz</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="preprocessing-data.html"><a href="preprocessing-data.html"><i class="fa fa-check"></i><b>2</b> PreProcessing Data</a><ul>
+<li class="chapter" data-level="2.1" data-path="preprocessing-data.html"><a href="preprocessing-data.html#learning-objectives-1"><i class="fa fa-check"></i><b>2.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="2.2" data-path="preprocessing-data.html"><a href="preprocessing-data.html#fastq"><i class="fa fa-check"></i><b>2.2</b> Fastq</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="preprocessing-data.html"><a href="preprocessing-data.html#quality-score-encoding"><i class="fa fa-check"></i><b>2.2.1</b> Quality score encoding</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="preprocessing-data.html"><a href="preprocessing-data.html#fastqc"><i class="fa fa-check"></i><b>2.3</b> FastQC</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="preprocessing-data.html"><a href="preprocessing-data.html#sometimes-we-shouldnt-trim"><i class="fa fa-check"></i><b>2.3.1</b> Sometimes we shouldn’t trim</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="preprocessing-data.html"><a href="preprocessing-data.html#exercises"><i class="fa fa-check"></i><b>2.4</b> Exercises</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="preprocessing-data.html"><a href="preprocessing-data.html#power-up-the-vm"><i class="fa fa-check"></i><b>2.4.1</b> Power Up The VM</a></li>
+<li class="chapter" data-level="2.4.2" data-path="preprocessing-data.html"><a href="preprocessing-data.html#start-galaxy"><i class="fa fa-check"></i><b>2.4.2</b> Start Galaxy</a></li>
+<li class="chapter" data-level="2.4.3" data-path="preprocessing-data.html"><a href="preprocessing-data.html#run-fastqc"><i class="fa fa-check"></i><b>2.4.3</b> Run FastQC</a></li>
+<li class="chapter" data-level="2.4.4" data-path="preprocessing-data.html"><a href="preprocessing-data.html#interpret-sequence-quality"><i class="fa fa-check"></i><b>2.4.4</b> Interpret Sequence Quality</a></li>
+<li class="chapter" data-level="2.4.5" data-path="preprocessing-data.html"><a href="preprocessing-data.html#clean-up-poor-quality-sequence"><i class="fa fa-check"></i><b>2.4.5</b> Clean Up Poor Quality Sequence</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html"><i class="fa fa-check"></i><b>3</b> Aligning Reads To A Reference</a><ul>
+<li class="chapter" data-level="3.1" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#learning-objectives-2"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#mapping-and-alignment"><i class="fa fa-check"></i><b>3.2</b> Mapping and Alignment</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#bwa"><i class="fa fa-check"></i><b>3.2.1</b> BWA</a></li>
+<li class="chapter" data-level="3.2.2" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#sam-format"><i class="fa fa-check"></i><b>3.2.2</b> SAM Format</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#exercises-1"><i class="fa fa-check"></i><b>3.3</b> Exercises</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#align-paired-end-reads-to-a-reference-genome"><i class="fa fa-check"></i><b>3.3.1</b> Align Paired-End Reads To A Reference Genome</a></li>
+<li class="chapter" data-level="3.3.2" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#merge-alignments-into-one-bam"><i class="fa fa-check"></i><b>3.3.2</b> Merge Alignments Into One BAM</a></li>
+<li class="chapter" data-level="3.3.3" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#alignment-quality"><i class="fa fa-check"></i><b>3.3.3</b> Alignment Quality</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html"><i class="fa fa-check"></i><b>4</b> Finding SNPs With An Alignment</a><ul>
+<li class="chapter" data-level="4.1" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#learning-objectives-3"><i class="fa fa-check"></i><b>4.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.2" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#mpileup"><i class="fa fa-check"></i><b>4.2</b> MPileup</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#different-flavours-of-pileup"><i class="fa fa-check"></i><b>4.2.1</b> Different Flavours of PileUp</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#exercises-2"><i class="fa fa-check"></i><b>4.3</b> Exercises</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#mpileup-1"><i class="fa fa-check"></i><b>4.3.1</b> MPileup</a></li>
+<li class="chapter" data-level="4.3.2" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#varscan"><i class="fa fa-check"></i><b>4.3.2</b> VarScan</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html"><i class="fa fa-check"></i><b>5</b> Visualising SNPs To Find Candidates</a><ul>
+<li class="chapter" data-level="5.1" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#learning-objectives-4"><i class="fa fa-check"></i><b>5.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="5.2" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#annotation"><i class="fa fa-check"></i><b>5.2</b> Annotation</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#snpeff"><i class="fa fa-check"></i><b>5.2.1</b> SNPEff</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#candisnp"><i class="fa fa-check"></i><b>5.3</b> CandiSNP</a></li>
+<li class="chapter" data-level="5.4" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#density-plots"><i class="fa fa-check"></i><b>5.4</b> Density plots</a></li>
+<li class="chapter" data-level="5.5" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#centromeres"><i class="fa fa-check"></i><b>5.5</b> Centromeres</a></li>
+<li class="chapter" data-level="5.6" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#snp-deletion---fewer-are-better"><i class="fa fa-check"></i><b>5.6</b> SNP Deletion - Fewer are better</a></li>
+<li class="chapter" data-level="5.7" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#exercises-3"><i class="fa fa-check"></i><b>5.7</b> Exercises</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#analyse-snp-data-with-candisnp"><i class="fa fa-check"></i><b>5.7.1</b> Analyse SNP data with CandiSNP</a></li>
+<li class="chapter" data-level="5.7.2" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#generate-density-plots-of-different-snp-classes"><i class="fa fa-check"></i><b>5.7.2</b> Generate density plots of different SNP classes</a></li>
+<li class="chapter" data-level="5.7.3" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#comparing-density-plots"><i class="fa fa-check"></i><b>5.7.3</b> Comparing density plots</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mutational Genomics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="visualising-snps-to-find-candidates" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Visualising SNPs To Find Candidates</h1>
+<div id="learning-objectives-4" class="section level2">
+<h2><span class="header-section-number">5.1</span> Learning Objectives</h2>
+<ul>
+<li>Understand CandiSNP output</li>
+<li>Plotting frequencies of SNPs of different types across the chromosome</li>
+</ul>
+</div>
+<div id="annotation" class="section level2">
+<h2><span class="header-section-number">5.2</span> Annotation</h2>
+<p>Once we’ve called SNPs, then the next stage is to annotate them. We are looking for heterozygous and homozygous information, which we get from the SNP callers, but a phenotype causing SNP is much more likely to cause a change in the protein that is encoded. Thus we need to know what the effect of the SNP on the protein is.</p>
+<p>These qualities are what we will look for in our candidate SNP approach - the most likely mutation causing SNPs will be:</p>
+<ul>
+<li>Homozygous</li>
+<li>Non-synonymous</li>
+<li>In a region enriched with homozygous SNPs</li>
+</ul>
+<div id="snpeff" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> SNPEff</h3>
+<p>We can annotate SNPs with a program called <code>SNPEff</code>. SNPEff <span class="citation">(Cingolani et al. <a href="#ref-Cingolani:2012cz">2012</a>)</span> is a fairly straightforward system. It needs a database of SNPs and a database of gene and gene/transcript positions and can give you whether the SNP is in a gene and whether the SNP causes a silent <a href="https://en.wikipedia.org/wiki/Synonymous_substitution">synonymous</a> change (IE the codon the SNP changes is for the same amino acid before and after the SNP sequence change ) or whether it causes a more significant <a href="https://en.wikipedia.org/wiki/Nonsynonymous_substitution">non-synonymous</a> change that actually changes the amino acid at that codon so the protein changes.</p>
+<p>Once we have a list of SNPs that we are happy with and have annotated them with SNPEff, there are a couple of approaches we can take to start finding candidates that may be our causative mutation.</p>
+<p>The approach we take will depend on the genetic background. As we discussed at the start, we are generally looking for a region of high homozygous SNPs, but the frequency of other SNPs will depend on the cross. A wide cross from a fairly distant relative (like a different strain or ecotype) as is commonly used in genetic mapping strategies will allow us to make use of the heterozygous SNPs as a control.</p>
+</div>
+</div>
+<div id="candisnp" class="section level2">
+<h2><span class="header-section-number">5.3</span> CandiSNP</h2>
+<p>Fast interactive visualisations are a great help in finding the recombinant region and narrowing the candidates. One tool that allows us to do this is <code>CandiSNP</code>. CandiSNP <span class="citation">(Etherington et al. <a href="#ref-Etherington:2014ba">2014</a>)</span> is a JavaScript visualisation package that allows interactive filtering and highlighting of SNPs across whole chromosomes (DISCLAIMER: My group wrote this!). The tool isn’t available inside Galaxy, but is on the web at <a href="http://candisnp.tsl.ac.uk" class="uri">http://candisnp.tsl.ac.uk</a>. A significant advantage of CandiSNP is that is has SNPEff built into it. So you can use the unannotated SNP file straight in CandiSNP.</p>
+
+<div class="figure"><span id="fig:csnpb4"></span>
+<img src="assets/candisnp.png" alt="Screenshot of the CandiSNP tool. Spots represent SNPs (height on the y axis shows major allele frequency)." width="192" />
+<p class="caption">
+Figure 5.1: Screenshot of the CandiSNP tool. Spots represent SNPs (height on the <code>y</code> axis shows major allele frequency).
+</p>
+</div>
+<p>CandiSNP allows you to look at the SNPs like in Figure <a href="visualising-snps-to-find-candidates.html#fig:csnpb4">5.1</a> and apply filters to narrow down the region and candidates so you see something like Figure <a href="visualising-snps-to-find-candidates.html#fig:csnp">5.2</a>. CandiSNP takes a VCF file as input.</p>
+
+<div class="figure"><span id="fig:csnp"></span>
+<img src="assets/candisnp_after.png" alt="CandiSNP after filtering. The region of the high red spot density is the recombinant region" width="192" />
+<p class="caption">
+Figure 5.2: CandiSNP after filtering. The region of the high red spot density is the recombinant region
+</p>
+</div>
+</div>
+<div id="density-plots" class="section level2">
+<h2><span class="header-section-number">5.4</span> Density plots</h2>
+<p>Statistical methods are useful when the number of SNPs generated is so large that you can’t visualise them all at the same time. Density plots like Figure <a href="visualising-snps-to-find-candidates.html#fig:densityp">5.3</a> (which is of the same data as the CandiSNP plot in <a href="visualising-snps-to-find-candidates.html#fig:csnpb4">5.1</a> help us to see the rough patterns in a similar way. The homozygous and heterozygous show an increase in the SNP-rich centromeric region which biases the data and an overall decrease at the far right of the chromosome, but the enriched region is visible in the high ratio at about 17Mbp as in the CandiSNP output. These kinds of plots can be generated with Galaxy’s plotting tools.</p>
+
+<div class="figure"><span id="fig:densityp"></span>
+<img src="assets/density.png" alt="Density plot of homozygous, heterozygous SNP density and the ratio of hom/het SNPS in sliding windows" width="192" />
+<p class="caption">
+Figure 5.3: Density plot of homozygous, heterozygous SNP density and the ratio of hom/het SNPS in sliding windows
+</p>
+</div>
+</div>
+<div id="centromeres" class="section level2">
+<h2><span class="header-section-number">5.5</span> Centromeres</h2>
+<p>Centromeres are a real problem with these sorts of analysis. They are so SNP rich that they swamp analysis and visualisations. It helps to just screen them out from the analysis. CandiSNP will let you turn off centromeres associated SNPs, Galaxy tools can also help you filter them out.</p>
+</div>
+<div id="snp-deletion---fewer-are-better" class="section level2">
+<h2><span class="header-section-number">5.6</span> SNP Deletion - Fewer are better</h2>
+<p>Perhaps it is counter-intuitive but getting fewer SNPs is often better in these approaches. A common source of confounding SNPs is from the parental line itself. All individuals of any species have differences in the genomes from the references we use to call SNPs, and some (perhaps many) of these will be shared between the parent used to generate the mutants and the mutants. By sequencing the parent line and calling SNPs between it and the reference genome, you get a list of parental SNPs that you can often delete straight out of the mutant as being non-causative.</p>
+</div>
+<div id="exercises-3" class="section level2">
+<h2><span class="header-section-number">5.7</span> Exercises</h2>
+<div id="analyse-snp-data-with-candisnp" class="section level3">
+<h3><span class="header-section-number">5.7.1</span> Analyse SNP data with CandiSNP</h3>
+<p>You have some whole genome <em>Arabidopsis</em> SNP data annotated with SNPEff in the shared data library <code>Annotation</code>, the VCF file <code>filtered_snps.vcf</code>. Use this in the web version of CandiSNP tool at [] This data set is a real one and we know exactly where the mutation is because we’ve sequenced it, so there is a <em>right</em> answer. Use the sliders and filter tools to find a region enriched in homozygous candidate SNPs.</p>
+<ol style="list-style-type: decimal">
+<li>Can you come up with candidate regions / genes for the causative mutation?</li>
+<li>Which is more useful, filtering or colouring?</li>
+<li>How much extra information does knowing the genes the SNPs fall in give? In this specific training case and in a real case where you might know something about the biology already.</li>
+</ol>
+</div>
+<div id="generate-density-plots-of-different-snp-classes" class="section level3">
+<h3><span class="header-section-number">5.7.2</span> Generate density plots of different SNP classes</h3>
+<p>Standard Galaxy tools can generate histograms of data. However the data needs to be in tabular format, not VCF. Here’s a little recipe for going from VCF to a table that is useful.</p>
+<ol style="list-style-type: decimal">
+<li>To make a tabular file, use the <code>Text Manipulation .. Cut Columns Tool</code>. Cut out columns <code>c1,c2,c3,c4,c8,c9</code>.</li>
+<li>To strip text from the AF field and just leave the numbers, use the <code>Text Manipulation .. Trim Leading</code> on <code>column 5</code>, trim to position <code>4</code> and set to <code>ignore</code> <code>#</code>.</li>
+<li>To get the homozygous SNPs, use the <code>Filter and Sort .. Filter data on any column</code> tool. Filter on <code>c5&gt;=0.75</code> (or whatever seems sensible to you).</li>
+<li>To get the heterozygous SNPs, do step <code>3</code> again but filter on <code>c5&lt;0.75</code>.</li>
+</ol>
+<p>This will leave you with two files on which to carry out the remaining steps.</p>
+<ol start="5" style="list-style-type: decimal">
+<li>To split the files into single chromosome files use <code>Text Manipulation .. Split file according to value of a column</code> use <code>column 1</code> (the chromosome column)</li>
+<li>For each resulting file you can use <code>Plotting .. Histogram</code> to make the histograms. It is useful to add the density plot and to use around 150 breaks.</li>
+</ol>
+<p>With a bit more work you can combine the different plots into one large one for easier comparison, and you can use sliding window tools to calculate the ratio of Hom/Het SNPs across the chromosomes.</p>
+</div>
+<div id="comparing-density-plots" class="section level3">
+<h3><span class="header-section-number">5.7.3</span> Comparing density plots</h3>
+<ol style="list-style-type: decimal">
+<li>Use the numerous density plots you made to compare the likely positions of the causative SNPs</li>
+<li>Can you narrow down the area sufficiently to examine the text list in more detail?</li>
+<li>What further filtering could you do to make the plots more effective?</li>
+</ol>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Cingolani:2012cz">
+<p>Cingolani, Pablo, Adrian Platts, Le Lily Wang, Melissa Coon, Tung Nguyen, Luan Wang, Susan J Land, Xiangyi Lu, and Douglas M Ruden. 2012. “A program for annotating and predicting the effects of single nucleotide polymorphisms, SnpEff: SNPs in the genome of Drosophila melanogaster strain w1118; iso-2; iso-3.” <em>Fly</em> 6 (2): 80–92.</p>
+</div>
+<div id="ref-Etherington:2014ba">
+<p>Etherington, Graham J, Jacqueline Monaghan, Cyril Zipfel, and Dan MacLean. 2014. “Mapping mutations in plant genomes with the user-friendly web application CandiSNP.” <em>Plant Methods</em> 10 (1): 41.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="finding-snps-with-an-alignment.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-candidates.Rmd",
+"text": "Edit"
+},
+"download": ["bioinformatics_handbook.pdf", "bioinformatics_handbook.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

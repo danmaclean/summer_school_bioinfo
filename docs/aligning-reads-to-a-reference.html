@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Mutational Genomics</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="An introductory course for bioinformatics of mutational genomics">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Mutational Genomics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="An introductory course for bioinformatics of mutational genomics" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Mutational Genomics" />
+  
+  <meta name="twitter:description" content="An introductory course for bioinformatics of mutational genomics" />
+  
+
+<meta name="author" content="Dan MacLean">
+
+
+<meta name="date" content="2017-05-16">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="preprocessing-data.html">
+<link rel="next" href="finding-snps-with-an-alignment.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Mutational Genomics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-fork-is-not-a-hairbrush---it-just-has-some-similar-properties"><i class="fa fa-check"></i>A fork is not a hairbrush - it just has some similar properties</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#so-finding-the-function-of-a-gene-isnt-straightforward"><i class="fa fa-check"></i>So finding the function of a gene isn’t straightforward</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#we-need-something-smarter---mutational-genomics-is-this-smarter-thing"><i class="fa fa-check"></i>We need something smarter - mutational genomics is this smarter thing</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#our-objective"><i class="fa fa-check"></i>Our objective</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="mutagenesis.html"><a href="mutagenesis.html"><i class="fa fa-check"></i><b>1</b> Mutagenesis</a><ul>
+<li class="chapter" data-level="1.1" data-path="mutagenesis.html"><a href="mutagenesis.html#learning-objectives"><i class="fa fa-check"></i><b>1.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="mutagenesis.html"><a href="mutagenesis.html#mutagenesis-with-ems"><i class="fa fa-check"></i><b>1.2</b> Mutagenesis with EMS</a></li>
+<li class="chapter" data-level="1.3" data-path="mutagenesis.html"><a href="mutagenesis.html#getting-a-population-homozygous-for-ems-induced-mutations"><i class="fa fa-check"></i><b>1.3</b> Getting a population homozygous for EMS induced mutations</a></li>
+<li class="chapter" data-level="1.4" data-path="mutagenesis.html"><a href="mutagenesis.html#genetic-screens"><i class="fa fa-check"></i><b>1.4</b> Genetic screens</a></li>
+<li class="chapter" data-level="1.5" data-path="mutagenesis.html"><a href="mutagenesis.html#recombination-during-crossing-causes-changes-in-snp-density-away-from-the-site-of-mutation"><i class="fa fa-check"></i><b>1.5</b> Recombination during crossing causes changes in SNP density away from the site of mutation</a></li>
+<li class="chapter" data-level="1.6" data-path="mutagenesis.html"><a href="mutagenesis.html#section-quiz"><i class="fa fa-check"></i><b>1.6</b> Section Quiz</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="preprocessing-data.html"><a href="preprocessing-data.html"><i class="fa fa-check"></i><b>2</b> PreProcessing Data</a><ul>
+<li class="chapter" data-level="2.1" data-path="preprocessing-data.html"><a href="preprocessing-data.html#learning-objectives-1"><i class="fa fa-check"></i><b>2.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="2.2" data-path="preprocessing-data.html"><a href="preprocessing-data.html#fastq"><i class="fa fa-check"></i><b>2.2</b> Fastq</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="preprocessing-data.html"><a href="preprocessing-data.html#quality-score-encoding"><i class="fa fa-check"></i><b>2.2.1</b> Quality score encoding</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="preprocessing-data.html"><a href="preprocessing-data.html#fastqc"><i class="fa fa-check"></i><b>2.3</b> FastQC</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="preprocessing-data.html"><a href="preprocessing-data.html#sometimes-we-shouldnt-trim"><i class="fa fa-check"></i><b>2.3.1</b> Sometimes we shouldn’t trim</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="preprocessing-data.html"><a href="preprocessing-data.html#exercises"><i class="fa fa-check"></i><b>2.4</b> Exercises</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="preprocessing-data.html"><a href="preprocessing-data.html#power-up-the-vm"><i class="fa fa-check"></i><b>2.4.1</b> Power Up The VM</a></li>
+<li class="chapter" data-level="2.4.2" data-path="preprocessing-data.html"><a href="preprocessing-data.html#start-galaxy"><i class="fa fa-check"></i><b>2.4.2</b> Start Galaxy</a></li>
+<li class="chapter" data-level="2.4.3" data-path="preprocessing-data.html"><a href="preprocessing-data.html#run-fastqc"><i class="fa fa-check"></i><b>2.4.3</b> Run FastQC</a></li>
+<li class="chapter" data-level="2.4.4" data-path="preprocessing-data.html"><a href="preprocessing-data.html#interpret-sequence-quality"><i class="fa fa-check"></i><b>2.4.4</b> Interpret Sequence Quality</a></li>
+<li class="chapter" data-level="2.4.5" data-path="preprocessing-data.html"><a href="preprocessing-data.html#clean-up-poor-quality-sequence"><i class="fa fa-check"></i><b>2.4.5</b> Clean Up Poor Quality Sequence</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html"><i class="fa fa-check"></i><b>3</b> Aligning Reads To A Reference</a><ul>
+<li class="chapter" data-level="3.1" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#learning-objectives-2"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#mapping-and-alignment"><i class="fa fa-check"></i><b>3.2</b> Mapping and Alignment</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#bwa"><i class="fa fa-check"></i><b>3.2.1</b> BWA</a></li>
+<li class="chapter" data-level="3.2.2" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#sam-format"><i class="fa fa-check"></i><b>3.2.2</b> SAM Format</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#exercises-1"><i class="fa fa-check"></i><b>3.3</b> Exercises</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#align-paired-end-reads-to-a-reference-genome"><i class="fa fa-check"></i><b>3.3.1</b> Align Paired-End Reads To A Reference Genome</a></li>
+<li class="chapter" data-level="3.3.2" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#merge-alignments-into-one-bam"><i class="fa fa-check"></i><b>3.3.2</b> Merge Alignments Into One BAM</a></li>
+<li class="chapter" data-level="3.3.3" data-path="aligning-reads-to-a-reference.html"><a href="aligning-reads-to-a-reference.html#alignment-quality"><i class="fa fa-check"></i><b>3.3.3</b> Alignment Quality</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html"><i class="fa fa-check"></i><b>4</b> Finding SNPs With An Alignment</a><ul>
+<li class="chapter" data-level="4.1" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#learning-objectives-3"><i class="fa fa-check"></i><b>4.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.2" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#mpileup"><i class="fa fa-check"></i><b>4.2</b> MPileup</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#different-flavours-of-pileup"><i class="fa fa-check"></i><b>4.2.1</b> Different Flavours of PileUp</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#exercises-2"><i class="fa fa-check"></i><b>4.3</b> Exercises</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#mpileup-1"><i class="fa fa-check"></i><b>4.3.1</b> MPileup</a></li>
+<li class="chapter" data-level="4.3.2" data-path="finding-snps-with-an-alignment.html"><a href="finding-snps-with-an-alignment.html#varscan"><i class="fa fa-check"></i><b>4.3.2</b> VarScan</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html"><i class="fa fa-check"></i><b>5</b> Visualising SNPs To Find Candidates</a><ul>
+<li class="chapter" data-level="5.1" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#learning-objectives-4"><i class="fa fa-check"></i><b>5.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="5.2" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#annotation"><i class="fa fa-check"></i><b>5.2</b> Annotation</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#snpeff"><i class="fa fa-check"></i><b>5.2.1</b> SNPEff</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#candisnp"><i class="fa fa-check"></i><b>5.3</b> CandiSNP</a></li>
+<li class="chapter" data-level="5.4" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#density-plots"><i class="fa fa-check"></i><b>5.4</b> Density plots</a></li>
+<li class="chapter" data-level="5.5" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#centromeres"><i class="fa fa-check"></i><b>5.5</b> Centromeres</a></li>
+<li class="chapter" data-level="5.6" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#snp-deletion---fewer-are-better"><i class="fa fa-check"></i><b>5.6</b> SNP Deletion - Fewer are better</a></li>
+<li class="chapter" data-level="5.7" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#exercises-3"><i class="fa fa-check"></i><b>5.7</b> Exercises</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#analyse-snp-data-with-candisnp"><i class="fa fa-check"></i><b>5.7.1</b> Analyse SNP data with CandiSNP</a></li>
+<li class="chapter" data-level="5.7.2" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#generate-density-plots-of-different-snp-classes"><i class="fa fa-check"></i><b>5.7.2</b> Generate density plots of different SNP classes</a></li>
+<li class="chapter" data-level="5.7.3" data-path="visualising-snps-to-find-candidates.html"><a href="visualising-snps-to-find-candidates.html#comparing-density-plots"><i class="fa fa-check"></i><b>5.7.3</b> Comparing density plots</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mutational Genomics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="aligning-reads-to-a-reference" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Aligning Reads To A Reference</h1>
+<div id="learning-objectives-2" class="section level2">
+<h2><span class="header-section-number">3.1</span> Learning Objectives</h2>
+<ul>
+<li>Understanding Alignment</li>
+<li>Know how to run the correct BWA alignment</li>
+<li>Understand the SAM/BAM format and relationship</li>
+</ul>
+<blockquote>
+<p>Culture Clash</p>
+<p>If you’re a bioinformatician - you may be wondering why I’m not using the words ‘mapping’ reads here. Well, the geneticists in the crowd have a much older technique called <a href="https://en.wikipedia.org/wiki/Gene_mapping">mapping</a> that does something completely different. I have honestly had conversations where it has been insisted that I can’t possibly map a read. Don’t suffer as I did.</p>
+<p>If you’re a geneticist - bioinformaticians claim they can do amazing things with reads, mapping them down to the single read level! Of course they usually just mean they’re aligning them to whatever reference sequence they have.</p>
+</blockquote>
+</div>
+<div id="mapping-and-alignment" class="section level2">
+<h2><span class="header-section-number">3.2</span> Mapping and Alignment</h2>
+<p>Mapping is the process of finding the position on a genome that a read best matches to, so is likely to have come from. Alignment is the optimal alignment of the sequence of the read with the reference sequence, such that gaps and errors are allowed and small variations can be found.</p>
+<div id="bwa" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> BWA</h3>
+<p>There are many tools for aligning reads (too many, probably). One of the best general ones is BWA <span class="citation">(Li and Durbin <a href="#ref-Li:2010bl">2010</a>)</span>. BWA is a high-throughput sequence aligner used to align relatively short sequences to a reference genome. It uses the Burrows-Wheeler Transform reduce the amount of memory needed to align reads by creating a compressed index of the reference sequence. It contains two algorithms for alignment, one <code>aln</code> for short reads up to around 200 bp with low error rate and another <code>mem</code> for longer reads. Both are very fast and accurate.</p>
+<p>BWA is complicated and there are lots of options to set. The crucial things we are going to need are a reference genome, and a set of reads.</p>
+<p>Often, a sequencing strategy will use <a href="https://www.illumina.com/technology/next-generation-sequencing/paired-end-sequencing_assay.html">paired-end reads</a>, where we know the distance between two reads and we can set that as a parameter. Usually the reads from a paired strategy come in two files, one of the pair in a ‘left’ file, and the other in a ‘right’ file.</p>
+<p>BWA has a lot of options, here’s some important ones:</p>
+<ol style="list-style-type: decimal">
+<li><code>Maximum edit distance</code> - is the maximum number of nucleotides in a read that can mis-match with the reference and the read still be aligned.</li>
+<li><code>Maximum number of gap opens</code>- refers to the amount of insertions that can occur across a read.</li>
+<li><code>Disallow insertion/deletion within some bp towards the end</code> - allows for the fact that sequence quality deteriorates towards the end of a sequence and the user might not want to trust indels in the last few bases of a read.</li>
+<li><code>Maximum insert size for a read pair to be considered as being mapped properly</code> - The insert size of reads is the distance between the outer ends of the two paired-end reads.</li>
+</ol>
+</div>
+<div id="sam-format" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> SAM Format</h3>
+<p>The output format from BWA and most other aligners is <a href="https://en.wikipedia.org/wiki/SAM_(file_format)">Sequence Alignment Map</a> (SAM) format <span class="citation">(Li et al. <a href="#ref-Li:2009ka">2009</a>)</span>. The SAM format describes the alignment of sequenced reads to a reference sequence. It stores all the alignment information generated by BWA in a simple and compact format. It provides information about the position of the read in relation to the reference genome, the number and position of nucleotides that match to the genome and the position of indels. SAM files are often analysed in packages like SAMTools <span class="citation">(Li et al. <a href="#ref-Li:2009ka">2009</a>)</span> and Picard (<a href="https://broadinstitute.github.io/picard/">Picard</a>)</p>
+<p>Here’s the top of a SAM file:</p>
+<pre><code>@HD VN:1.3  SO:coordinate
+@SQ SN:chloroplast  LN:154478
+@PG ID:bwa  PN:bwa  VN:0.7.10-r876-dirty    CL:bwa mem -t 1 -v 1
+chloroplast-1781    99  chloroplast 54  60  250M    =   374 570 TTA A?? NM:i:0  MD:Z:250    AS:i:250    XS:i:0
+chloroplast-757 163 chloroplast 66  60  250M    =   459 643 GCT A5? NM:i:6  MD:Z:46A20T65T56A23A2T32    AS:i:220    XS:i:0
+chloroplast-1781    147 chloroplast 374 60  250M    =   54  -570    ACT G:E NM:i:6  MD:Z:9T42G1G2G7C42A141  AS:i:220    XS:i:0
+chloroplast-703 163 chloroplast 437 60  250M    =   794 607 AGC ??? NM:i:8  MD:Z:68T2C20C68T16G9A30A8G21    AS:i:210    XS:i:0</code></pre>
+<ol style="list-style-type: decimal">
+<li>The first few lines start with stuff like <code>@SQ SN</code> which described thigs like program parameters followed by the name of the sequences in the reference file (<code>chloroplast</code>) and the length of the sequence (154478).</li>
+<li>Every line after that corresponds to each read that BWA handled.</li>
+<li>Each line starts with the name of the read and has a number of columns of data after it.</li>
+<li>In the 3rd column we can see which chromosome our read has been mapped to and the position of the first mapped base in column 4. An unmapped read will have a * in column 3 and zero in column 4.</li>
+<li>The 5th column is the mapping quality, a score quantifying the probability that a read is misplaced.</li>
+<li>The 6th column is the CIGAR string and consists of numbers followed by an upper-case letter (the operator), which describes the alignment.</li>
+</ol>
+<p>As an example, a CIGAR string of <code>36M3D40M</code> means 36 matching nucleotides, followed by 3 deletions and ending in 40 matches.</p>
+<p>A BAM file is a highly compressed, indexed binary version of SAM and through a library of different tools, allows fast, random access to the alignment. Some Galaxy tools will automatically convert the output from aligners to BAM format for you - (BWA does this!).</p>
+</div>
+</div>
+<div id="exercises-1" class="section level2">
+<h2><span class="header-section-number">3.3</span> Exercises</h2>
+<div id="align-paired-end-reads-to-a-reference-genome" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> Align Paired-End Reads To A Reference Genome</h3>
+<p>Use the two sets of paired reads in the <code>Alignment</code> shared data library and the <code>ATH1_chloroplast</code> reference genome sequence, to carry out a HTS alignment. Again these are sequences from the chloroplast genome of the model plant <em>Arabidopsis</em> . One set of reads, <code>MS</code>, are from an Illumina MiSeq machine, are 250 nt long and have a fragment length of 650 nt. The others, <code>GA2</code> are from an Illumina GAII machine, are 75 nt long and have a fragment length of 350.</p>
+<ol style="list-style-type: decimal">
+<li>Which algorithm should you use for each set of reads?</li>
+<li>Align each of these with the BWA program in the <code>HTS Alignment</code> tools section. Choose an appropriate algorithm for each sequence set.</li>
+<li>Pick parameters to make the two alignments as accurate and equivalent as possible? Which should differ? Which should be the same?</li>
+<li>Check the results with the SAMtools <code>idxstats</code> tool and other alignment stats tools like <code>Flagstat</code> and <code>Stats</code> in <code>HTS SAMtools</code>. How do the results relate to what you know about the sequencing strategy? (What are the calculated insert sizes, what is the coverage, how many reads do you keep?)</li>
+</ol>
+</div>
+<div id="merge-alignments-into-one-bam" class="section level3">
+<h3><span class="header-section-number">3.3.2</span> Merge Alignments Into One BAM</h3>
+<p>After alignment of two read sets from different sequencing strategies, you might want to merge all of them into one BAM file so that you can work on them as one. This isn’t just more convenient, it lets you make use of the extra information from combining the reads into one coverage pileup when calling SNPs or visualising the alignment.</p>
+<p>Merging is a multi-stage process that can be done with <a href="https://broadinstitute.github.io/picard/">Picard</a>, the steps in Picard look like:</p>
+<ol style="list-style-type: decimal">
+<li>Remove duplicate reads</li>
+<li>Sort BAMs individually</li>
+<li>Merge BAMs</li>
+</ol>
+<p>Picard tools are available in the <code>Picard</code> tool section. Try merging the BAM files.</p>
+</div>
+<div id="alignment-quality" class="section level3">
+<h3><span class="header-section-number">3.3.3</span> Alignment Quality</h3>
+<p>The <code>HTS SAMtools</code> tool <code>BAM-to-SAM</code> will allow you to turn the binary BAM file into a SAM file you can read.</p>
+<ol style="list-style-type: decimal">
+<li>How good do the individual alignments look overall? Can you tell from the output? Is it useful to look at single alignments one by one?</li>
+<li>Does the <a href="https://samtools.github.io/hts-specs/SAMv1.pdf">SAM Specification</a> give you any further information from which you can judge the alignments?</li>
+<li>In what cases might the individual alignments be useful?</li>
+</ol>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Li:2010bl">
+<p>Li, Heng, and Richard Durbin. 2010. “Fast and accurate long-read alignment with Burrows-Wheeler transform.” <em>Bioinformatics (Oxford, England)</em> 26 (5): 589–95.</p>
+</div>
+<div id="ref-Li:2009ka">
+<p>Li, Heng, Bob Handsaker, Alec Wysoker, Tim Fennell, Jue Ruan, Nils Homer, Gabor Marth, Goncalo Abecasis, Richard Durbin, and 1000 Genome Project Data Processing Subgroup. 2009. “The Sequence Alignment/Map format and SAMtools.” <em>Bioinformatics (Oxford, England)</em> 25 (16): 2078–9.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="preprocessing-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="finding-snps-with-an-alignment.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-alignment.Rmd",
+"text": "Edit"
+},
+"download": ["bioinformatics_handbook.pdf", "bioinformatics_handbook.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

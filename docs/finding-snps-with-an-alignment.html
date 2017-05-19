@@ -26,7 +26,7 @@
 <meta name="author" content="Dan MacLean">
 
 
-<meta name="date" content="2017-05-16">
+<meta name="date" content="2017-05-19">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -93,7 +93,7 @@
 <li class="chapter" data-level="2.4.1" data-path="preprocessing-data.html"><a href="preprocessing-data.html#power-up-the-vm"><i class="fa fa-check"></i><b>2.4.1</b> Power Up The VM</a></li>
 <li class="chapter" data-level="2.4.2" data-path="preprocessing-data.html"><a href="preprocessing-data.html#start-galaxy"><i class="fa fa-check"></i><b>2.4.2</b> Start Galaxy</a></li>
 <li class="chapter" data-level="2.4.3" data-path="preprocessing-data.html"><a href="preprocessing-data.html#run-fastqc"><i class="fa fa-check"></i><b>2.4.3</b> Run FastQC</a></li>
-<li class="chapter" data-level="2.4.4" data-path="preprocessing-data.html"><a href="preprocessing-data.html#interpret-sequence-quality"><i class="fa fa-check"></i><b>2.4.4</b> Interpret Sequence Quality</a></li>
+<li class="chapter" data-level="2.4.4" data-path="preprocessing-data.html"><a href="preprocessing-data.html#qualprac"><i class="fa fa-check"></i><b>2.4.4</b> Interpret Sequence Quality</a></li>
 <li class="chapter" data-level="2.4.5" data-path="preprocessing-data.html"><a href="preprocessing-data.html#clean-up-poor-quality-sequence"><i class="fa fa-check"></i><b>2.4.5</b> Clean Up Poor Quality Sequence</a></li>
 </ul></li>
 </ul></li>
@@ -250,11 +250,11 @@ seq1 279 C 23  A..T,,.,.,...,,,.,..... ;75&amp;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&
 <div id="mpileup-1" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> MPileup</h3>
 <p>You are provided with a new BAM file for <em>Arabidopsis</em> chromosome 4 in the shared data library <code>SNP Calling</code>, use it to run <code>HTS SAMtools .. SAMtools mpileup</code>. Remember you’ll need to load a reference genome, the <code>TAIR_10_chr4.fasta</code> file should be imported to your history for this purpose.</p>
+<p>Please complete the section quiz at <a href="https://goo.gl/forms/YvCzG7JfYxj7zntz2" class="uri">https://goo.gl/forms/YvCzG7JfYxj7zntz2</a></p>
 <ol style="list-style-type: decimal">
 <li>How do you make <code>SAMtools mpileup</code> output VCF or Mpileup?</li>
 <li>What are differences in information between the two?</li>
-<li>Generate an MPileup file and select appropriate <code>advanced options</code> to make sure you have a good enough mapping quality (~20) and base quality (~30) for reliable SNP calls.<br />
-</li>
+<li>Generate an MPileup file and select appropriate <code>advanced options</code> to make sure you have a good enough mapping quality (~20) and base quality (~30) for reliable SNP calls.</li>
 <li>What is the point of adding a maximum read depth?</li>
 <li>How does this run compare in execution time with earlier ones in this course? Why is there a difference?</li>
 </ol>

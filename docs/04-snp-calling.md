@@ -120,9 +120,11 @@ Whichever tool you use, make sure that you get a good idea of what it's options 
 
 You are provided with a new BAM file for _Arabidopsis_ chromosome 4 in the shared data library `SNP Calling`, use it to run `HTS SAMtools .. SAMtools mpileup`. Remember you'll need to load a reference genome, the `TAIR_10_chr4.fasta` file should be imported to your history for this purpose.  
 
+Please complete the section quiz at [https://goo.gl/forms/YvCzG7JfYxj7zntz2](https://goo.gl/forms/YvCzG7JfYxj7zntz2)
+
   1. How do you make `SAMtools mpileup` output VCF or Mpileup?
   2. What are differences in information between the two? 
-  3. Generate an MPileup file and select appropriate `advanced options` to make sure you have a good enough mapping quality (~20) and base quality (~30) for reliable SNP calls.  
+  3. Generate an MPileup file and select appropriate `advanced options` to make sure you have a good enough mapping quality (~20) and base quality (~30) for reliable SNP calls.
   4. What is the point of adding a maximum read depth?
   5. How does this run compare in execution time with earlier ones in this course? Why is there a difference?
 

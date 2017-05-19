@@ -26,7 +26,7 @@
 <meta name="author" content="Dan MacLean">
 
 
-<meta name="date" content="2017-05-16">
+<meta name="date" content="2017-05-19">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -93,7 +93,7 @@
 <li class="chapter" data-level="2.4.1" data-path="preprocessing-data.html"><a href="preprocessing-data.html#power-up-the-vm"><i class="fa fa-check"></i><b>2.4.1</b> Power Up The VM</a></li>
 <li class="chapter" data-level="2.4.2" data-path="preprocessing-data.html"><a href="preprocessing-data.html#start-galaxy"><i class="fa fa-check"></i><b>2.4.2</b> Start Galaxy</a></li>
 <li class="chapter" data-level="2.4.3" data-path="preprocessing-data.html"><a href="preprocessing-data.html#run-fastqc"><i class="fa fa-check"></i><b>2.4.3</b> Run FastQC</a></li>
-<li class="chapter" data-level="2.4.4" data-path="preprocessing-data.html"><a href="preprocessing-data.html#interpret-sequence-quality"><i class="fa fa-check"></i><b>2.4.4</b> Interpret Sequence Quality</a></li>
+<li class="chapter" data-level="2.4.4" data-path="preprocessing-data.html"><a href="preprocessing-data.html#qualprac"><i class="fa fa-check"></i><b>2.4.4</b> Interpret Sequence Quality</a></li>
 <li class="chapter" data-level="2.4.5" data-path="preprocessing-data.html"><a href="preprocessing-data.html#clean-up-poor-quality-sequence"><i class="fa fa-check"></i><b>2.4.5</b> Clean Up Poor Quality Sequence</a></li>
 </ul></li>
 </ul></li>
@@ -223,29 +223,29 @@ Figure 2.2: The first few bases here are significantly enriched, this can be due
 </div>
 <div id="run-fastqc" class="section level3">
 <h3><span class="header-section-number">2.4.3</span> Run FastQC</h3>
-<p>Use the reads in the <code>Pre-processing</code> data library. You will find the <code>FastQC</code> tool in the tool list under <code>HTS QC</code>. The reads are single ended from mutagenised <em>Arabidopsis thaliana</em>. They are Illumina <a href="https://en.wikipedia.org/wiki/Shotgun_sequencing">Whole Genome Shotgun reads</a> so don’t have any multiplex adapters and the plants are grown in sterile culture so we aren’t expecting contamination.</p>
+<p>Use the reads in the <code>Pre-processing</code> data library. You will find the <code>FastQC</code> tool in the tool list under <code>HTS QC</code>. The reads are single ended from mutagenised <em>Arabidopsis thaliana</em>. They are Illumina <a href="https://en.wikipedia.org/wiki/Shotgun_sequencing">Whole Genome Shotgun reads</a>, the sequence pipeline from our provider should have removed any multiplex adapters and the plants are grown in sterile culture so we aren’t expecting contamination.</p>
+<p>Please now complete the section quiz at <a href="https://goo.gl/forms/GBnZKO2Yt6hROAvw2" class="uri">https://goo.gl/forms/GBnZKO2Yt6hROAvw2</a>.</p>
 <ol style="list-style-type: decimal">
 <li>How many reads are you using?</li>
 <li>What sort of output files do you get from FastQC?</li>
-<li>What should you do with these files? Do they represent a scientific control that could be published?</li>
+<li>What should you do with these files?</li>
+<li>Do they represent a scientific control that could be published?</li>
 </ol>
 </div>
-<div id="interpret-sequence-quality" class="section level3">
+<div id="qualprac" class="section level3">
 <h3><span class="header-section-number">2.4.4</span> Interpret Sequence Quality</h3>
 <ol style="list-style-type: decimal">
 <li>Is there any evidence of contamination? Which report tells you?</li>
 <li>If there is, which sequence is contaminating?</li>
-<li>Which of the four files is the best?</li>
 </ol>
 </div>
 <div id="clean-up-poor-quality-sequence" class="section level3">
 <h3><span class="header-section-number">2.4.5</span> Clean Up Poor Quality Sequence</h3>
-<p>Use the <code>Trimmomatic</code> tool in <code>HTS QC</code>. Select an appropriate <code>Average quality required</code></p>
+<p>Use the <code>Trimmomatic</code> tool in <code>HTS QC</code>.</p>
 <ol style="list-style-type: decimal">
-<li>Find a trimming strategy to get rid of contamination you observed in section <code>2.1</code>?</li>
-<li>Which trimming strategy improves the low quality reads</li>
-<li>Did it make any difference?</li>
-<li>How could you filter on size? If you needed to pass only good quality, full length sequences to the next step?</li>
+<li>Find and try a trimming strategy to get rid of problems you observed in the section on <a href="preprocessing-data.html#qualprac">interpreting sequence quality</a>. Select an appropriate <code>Average quality required</code>?</li>
+<li>Which trimming strategy improves the set of reads?</li>
+<li>How could you filter on size if you needed to pass only good quality, full length sequences to the next step?</li>
 </ol>
 
 </div>

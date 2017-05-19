@@ -2,7 +2,7 @@
 title: "Mutational Genomics"
 author: "Dan MacLean"
 description: "An introductory course for bioinformatics of mutational genomics"
-date: "2017-05-16"
+date: "2017-05-19"
 site: bookdown::bookdown_site
 documentclass: book
 lot: no

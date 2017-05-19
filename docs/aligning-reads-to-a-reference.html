@@ -26,7 +26,7 @@
 <meta name="author" content="Dan MacLean">
 
 
-<meta name="date" content="2017-05-16">
+<meta name="date" content="2017-05-19">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -93,7 +93,7 @@
 <li class="chapter" data-level="2.4.1" data-path="preprocessing-data.html"><a href="preprocessing-data.html#power-up-the-vm"><i class="fa fa-check"></i><b>2.4.1</b> Power Up The VM</a></li>
 <li class="chapter" data-level="2.4.2" data-path="preprocessing-data.html"><a href="preprocessing-data.html#start-galaxy"><i class="fa fa-check"></i><b>2.4.2</b> Start Galaxy</a></li>
 <li class="chapter" data-level="2.4.3" data-path="preprocessing-data.html"><a href="preprocessing-data.html#run-fastqc"><i class="fa fa-check"></i><b>2.4.3</b> Run FastQC</a></li>
-<li class="chapter" data-level="2.4.4" data-path="preprocessing-data.html"><a href="preprocessing-data.html#interpret-sequence-quality"><i class="fa fa-check"></i><b>2.4.4</b> Interpret Sequence Quality</a></li>
+<li class="chapter" data-level="2.4.4" data-path="preprocessing-data.html"><a href="preprocessing-data.html#qualprac"><i class="fa fa-check"></i><b>2.4.4</b> Interpret Sequence Quality</a></li>
 <li class="chapter" data-level="2.4.5" data-path="preprocessing-data.html"><a href="preprocessing-data.html#clean-up-poor-quality-sequence"><i class="fa fa-check"></i><b>2.4.5</b> Clean Up Poor Quality Sequence</a></li>
 </ul></li>
 </ul></li>
@@ -214,11 +214,12 @@ chloroplast-703 163 chloroplast 437 60  250M    =   794 607 AGC ??? NM:i:8  MD:Z
 <div id="align-paired-end-reads-to-a-reference-genome" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> Align Paired-End Reads To A Reference Genome</h3>
 <p>Use the two sets of paired reads in the <code>Alignment</code> shared data library and the <code>ATH1_chloroplast</code> reference genome sequence, to carry out a HTS alignment. Again these are sequences from the chloroplast genome of the model plant <em>Arabidopsis</em> . One set of reads, <code>MS</code>, are from an Illumina MiSeq machine, are 250 nt long and have a fragment length of 650 nt. The others, <code>GA2</code> are from an Illumina GAII machine, are 75 nt long and have a fragment length of 350.</p>
+<p>Please complete the section quiz at <a href="https://goo.gl/forms/l3ykUt7eNvZAM9Y42" class="uri">https://goo.gl/forms/l3ykUt7eNvZAM9Y42</a></p>
 <ol style="list-style-type: decimal">
 <li>Which algorithm should you use for each set of reads?</li>
 <li>Align each of these with the BWA program in the <code>HTS Alignment</code> tools section. Choose an appropriate algorithm for each sequence set.</li>
 <li>Pick parameters to make the two alignments as accurate and equivalent as possible? Which should differ? Which should be the same?</li>
-<li>Check the results with the SAMtools <code>idxstats</code> tool and other alignment stats tools like <code>Flagstat</code> and <code>Stats</code> in <code>HTS SAMtools</code>. How do the results relate to what you know about the sequencing strategy? (What are the calculated insert sizes, what is the coverage, how many reads do you keep?)</li>
+<li>Check the results with the SAMtools <code>idxstats</code> tool and other alignment stats tools like <code>Flagstat</code> and <code>Stats</code> in <code>HTS SAMtools</code>. How do the results relate to what you know about the sequencing strategy? (What are the calculated insert sizes, what is the coverage, how many reads map?)</li>
 </ol>
 </div>
 <div id="merge-alignments-into-one-bam" class="section level3">
@@ -237,7 +238,6 @@ chloroplast-703 163 chloroplast 437 60  250M    =   794 607 AGC ??? NM:i:8  MD:Z
 <p>The <code>HTS SAMtools</code> tool <code>BAM-to-SAM</code> will allow you to turn the binary BAM file into a SAM file you can read.</p>
 <ol style="list-style-type: decimal">
 <li>How good do the individual alignments look overall? Can you tell from the output? Is it useful to look at single alignments one by one?</li>
-<li>Does the <a href="https://samtools.github.io/hts-specs/SAMv1.pdf">SAM Specification</a> give you any further information from which you can judge the alignments?</li>
 <li>In what cases might the individual alignments be useful?</li>
 </ol>
 

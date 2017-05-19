@@ -85,7 +85,7 @@
   \postauthor{\par}
   \predate{\centering\large\emph}
   \postdate{\par}
-  \date{2017-05-16}
+  \date{2017-05-19}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -301,7 +301,7 @@ phenotype of interest.
 \section{Section Quiz}\label{section-quiz}
 
 Please now complete the section quiz at
-\href{https://goo.gl/forms/RLGLndlcEcoV8c742}{this link}
+\url{https://goo.gl/forms/RLGLndlcEcoV8c742}
 
 \chapter{PreProcessing Data}\label{preprocessing-data}
 
@@ -445,8 +445,12 @@ the \texttt{FastQC} tool in the tool list under \texttt{HTS\ QC}. The
 reads are single ended from mutagenised \emph{Arabidopsis thaliana}.
 They are Illumina
 \href{https://en.wikipedia.org/wiki/Shotgun_sequencing}{Whole Genome
-Shotgun reads} so don't have any multiplex adapters and the plants are
-grown in sterile culture so we aren't expecting contamination.
+Shotgun reads}, the sequence pipeline from our provider should have
+removed any multiplex adapters and the plants are grown in sterile
+culture so we aren't expecting contamination.
+
+Please now complete the section quiz at
+\url{https://goo.gl/forms/GBnZKO2Yt6hROAvw2}.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -456,12 +460,13 @@ grown in sterile culture so we aren't expecting contamination.
 \item
   What sort of output files do you get from FastQC?
 \item
-  What should you do with these files? Do they represent a scientific
-  control that could be published?
+  What should you do with these files?
+\item
+  Do they represent a scientific control that could be published?
 \end{enumerate}
 
-\subsection{Interpret Sequence
-Quality}\label{interpret-sequence-quality}
+\hypertarget{qualprac}{\subsection{Interpret Sequence
+Quality}\label{qualprac}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -470,28 +475,24 @@ Quality}\label{interpret-sequence-quality}
   Is there any evidence of contamination? Which report tells you?
 \item
   If there is, which sequence is contaminating?
-\item
-  Which of the four files is the best?
 \end{enumerate}
 
 \subsection{Clean Up Poor Quality
 Sequence}\label{clean-up-poor-quality-sequence}
 
-Use the \texttt{Trimmomatic} tool in \texttt{HTS\ QC}. Select an
-appropriate \texttt{Average\ quality\ required}
+Use the \texttt{Trimmomatic} tool in \texttt{HTS\ QC}.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Find a trimming strategy to get rid of contamination you observed in
-  section \texttt{2.1}?
+  Find and try a trimming strategy to get rid of problems you observed
+  in the section on \protect\hyperlink{qualprac}{interpreting sequence
+  quality}. Select an appropriate \texttt{Average\ quality\ required}?
 \item
-  Which trimming strategy improves the low quality reads
+  Which trimming strategy improves the set of reads?
 \item
-  Did it make any difference?
-\item
-  How could you filter on size? If you needed to pass only good quality,
+  How could you filter on size if you needed to pass only good quality,
   full length sequences to the next step?
 \end{enumerate}
 
@@ -651,6 +652,9 @@ and have a fragment length of 650 nt. The others, \texttt{GA2} are from
 an Illumina GAII machine, are 75 nt long and have a fragment length of
 350.
 
+Please complete the section quiz at
+\url{https://goo.gl/forms/l3ykUt7eNvZAM9Y42}
+
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
@@ -668,7 +672,7 @@ an Illumina GAII machine, are 75 nt long and have a fragment length of
   alignment stats tools like \texttt{Flagstat} and \texttt{Stats} in
   \texttt{HTS\ SAMtools}. How do the results relate to what you know
   about the sequencing strategy? (What are the calculated insert sizes,
-  what is the coverage, how many reads do you keep?)
+  what is the coverage, how many reads map?)
 \end{enumerate}
 
 \subsection{Merge Alignments Into One
@@ -709,10 +713,6 @@ turn the binary BAM file into a SAM file you can read.
 \item
   How good do the individual alignments look overall? Can you tell from
   the output? Is it useful to look at single alignments one by one?
-\item
-  Does the \href{https://samtools.github.io/hts-specs/SAMv1.pdf}{SAM
-  Specification} give you any further information from which you can
-  judge the alignments?
 \item
   In what cases might the individual alignments be useful?
 \end{enumerate}
@@ -929,6 +929,9 @@ in the shared data library \texttt{SNP\ Calling}, use it to run
 load a reference genome, the \texttt{TAIR\_10\_chr4.fasta} file should
 be imported to your history for this purpose.
 
+Please complete the section quiz at
+\url{https://goo.gl/forms/YvCzG7JfYxj7zntz2}
+
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
@@ -940,7 +943,7 @@ be imported to your history for this purpose.
   Generate an MPileup file and select appropriate
   \texttt{advanced\ options} to make sure you have a good enough mapping
   quality (\textasciitilde{}20) and base quality (\textasciitilde{}30)
-  for reliable SNP calls.\\
+  for reliable SNP calls.
 \item
   What is the point of adding a maximum read depth?
 \item
@@ -1126,6 +1129,9 @@ mutation is because we've sequenced it, so there is a \emph{right}
 answer. Use the sliders and filter tools to find a region enriched in
 homozygous candidate SNPs.
 
+Please complete the questions at
+\url{https://goo.gl/forms/KnqB9IdRXRB3rQbu1}
+
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
@@ -1136,8 +1142,8 @@ homozygous candidate SNPs.
   Which is more useful, filtering or colouring?
 \item
   How much extra information does knowing the genes the SNPs fall in
-  give? In this specific training case and in a real case where you
-  might know something about the biology already.
+  give? Especially in a case where you might know something about the
+  biology already.
 \end{enumerate}
 
 \subsection{Generate density plots of different SNP

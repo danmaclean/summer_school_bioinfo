@@ -59,4 +59,4 @@ This statistical difference, a region of high homozygous SNPs around the mutatio
 
 ## Section Quiz
 
-Please now complete the section quiz at [this link](https://goo.gl/forms/RLGLndlcEcoV8c742)
+Please now complete the section quiz at [https://goo.gl/forms/RLGLndlcEcoV8c742](https://goo.gl/forms/RLGLndlcEcoV8c742)

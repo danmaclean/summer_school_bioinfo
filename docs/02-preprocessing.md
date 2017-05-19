@@ -75,23 +75,24 @@ Galaxy should appear ready and waiting in the Chromium browser on the desktop in
 ### Run FastQC
 
 Use the reads in the `Pre-processing` data library. You will find the `FastQC` tool in the tool list under `HTS QC`.
-The reads are single ended from mutagenised _Arabidopsis thaliana_. They are Illumina [Whole Genome Shotgun reads](https://en.wikipedia.org/wiki/Shotgun_sequencing) so don't have any multiplex adapters and the plants are grown in sterile culture so we aren't expecting contamination.
+The reads are single ended from mutagenised _Arabidopsis thaliana_. They are Illumina [Whole Genome Shotgun reads](https://en.wikipedia.org/wiki/Shotgun_sequencing), the sequence pipeline from our provider should have removed any multiplex adapters and the plants are grown in sterile culture so we aren't expecting contamination.
+
+Please now complete the section quiz at [https://goo.gl/forms/GBnZKO2Yt6hROAvw2](https://goo.gl/forms/GBnZKO2Yt6hROAvw2).
 
  1. How many reads are you using?
  2. What sort of output files do you get from FastQC?
- 3. What should you do with these files? Do they represent a scientific control that could be published?
+ 3. What should you do with these files? 
+ 4. Do they represent a scientific control that could be published?
 
-### Interpret Sequence Quality
+### Interpret Sequence Quality {#qualprac}
 
  1. Is there any evidence of contamination? Which report tells you?
  2. If there is, which sequence is contaminating?
- 3. Which of the four files is the best?
 
 ### Clean Up Poor Quality Sequence
 
-Use the `Trimmomatic` tool in `HTS QC`. Select an appropriate `Average quality required`
+Use the `Trimmomatic` tool in `HTS QC`. 
 
- 1. Find a trimming strategy to get rid of contamination you observed in section `2.1`?
- 2. Which trimming strategy improves the low quality reads
- 3. Did it make any difference?
- 4. How could you filter on size? If you needed to pass only good quality, full length sequences to the next step?
+ 1. Find and try a trimming strategy to get rid of problems you observed in the section on [interpreting sequence quality](#qualprac). Select an appropriate `Average quality required`?
+ 2. Which trimming strategy improves the set of reads?
+ 3. How could you filter on size if you needed to pass only good quality, full length sequences to the next step?

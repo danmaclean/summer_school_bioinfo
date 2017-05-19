@@ -65,10 +65,12 @@ A BAM file is a highly compressed, indexed binary version of SAM and through a l
 
 Use the two sets of paired reads in the `Alignment` shared data library and the `ATH1_chloroplast` reference genome sequence, to carry out a HTS alignment. Again these are sequences from the chloroplast genome of the model plant _Arabidopsis_ . One set of reads, `MS`, are from an Illumina MiSeq machine, are 250 nt long and have a fragment length of 650 nt. The others, `GA2` are from an Illumina GAII machine, are 75 nt long and have a fragment length of 350. 
 
+Please complete the section quiz at [https://goo.gl/forms/l3ykUt7eNvZAM9Y42](https://goo.gl/forms/l3ykUt7eNvZAM9Y42)
+
   1. Which algorithm should you use for each set of reads?
   2. Align each of these with the BWA program in the `HTS Alignment` tools section. Choose an appropriate algorithm for each sequence set.
   3. Pick parameters to make the two alignments as accurate and equivalent as possible? Which should differ? Which should be the same?
-  4. Check the results with the SAMtools `idxstats` tool and other alignment stats tools like `Flagstat` and `Stats` in `HTS SAMtools`. How do the results relate to what you know about the sequencing strategy? (What are the calculated insert sizes, what is the coverage, how many reads do you keep?) 
+  4. Check the results with the SAMtools `idxstats` tool and other alignment stats tools like `Flagstat` and `Stats` in `HTS SAMtools`. How do the results relate to what you know about the sequencing strategy? (What are the calculated insert sizes, what is the coverage, how many reads map?) 
 
 ### Merge Alignments Into One BAM
 
@@ -87,5 +89,4 @@ Merging is a multi-stage process that can be done with [Picard](https://broadins
 The `HTS SAMtools` tool `BAM-to-SAM` will allow you to turn the binary BAM file into a SAM file you can read.
 
   1. How good do the individual alignments look overall? Can you tell from the output? Is it useful to look at single alignments one by one? 
-  2. Does the [SAM Specification](https://samtools.github.io/hts-specs/SAMv1.pdf) give you any further information from which you can judge the alignments?
-  3. In what cases might the individual alignments be useful?
+  2. In what cases might the individual alignments be useful?

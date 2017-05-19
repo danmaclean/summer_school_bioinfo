@@ -67,9 +67,11 @@ Perhaps it is counter-intuitive but getting fewer SNPs is often better in these 
 
 You have some whole genome _Arabidopsis_ SNP data annotated with SNPEff in the shared data library `Annotation`, the VCF file `filtered_snps.vcf`. Use this in the web version of CandiSNP tool at [] This data set is a real one and we know exactly where the mutation is because we've sequenced it, so there is a _right_ answer. Use the sliders and filter tools to find a region enriched in homozygous candidate SNPs.
 
+Please complete the questions at [https://goo.gl/forms/KnqB9IdRXRB3rQbu1](https://goo.gl/forms/KnqB9IdRXRB3rQbu1)
+
   1. Can you come up with candidate regions / genes for the causative mutation?
   2. Which is more useful, filtering or colouring?
-  3. How much extra information does knowing the genes the SNPs fall in give? In this specific training case and in a real case where you might know something about the biology already.
+  3. How much extra information does knowing the genes the SNPs fall in give? Especially in a case where you might know something about the biology already.
 
 ### Generate density plots of different SNP classes
 

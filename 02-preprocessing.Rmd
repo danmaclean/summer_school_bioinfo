@@ -64,7 +64,7 @@ Your task now is to load up Galaxy and run some reads through quality control an
 ### Power Up The VM
 
   1. Start  `VirtualBox` by double-clicking it's application icon.
-  2. Use `File` .. `Import Appliance` and select the `??????` VM file.
+  2. The summer school VM snapshot should be the only one in the list of VMs. Start that by double clicking on it.
 
 ### Start Galaxy
 
